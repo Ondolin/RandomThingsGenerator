@@ -1,0 +1,1 @@
+start cmd.exe /k "py -m pip install -r requirements.txt"
