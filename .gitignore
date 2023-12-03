@@ -1,0 +1,6 @@
+.DS_Store
+bin
+lib
+pyvenv.cfg
+settings.yaml
+table.txt
