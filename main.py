@@ -132,6 +132,7 @@ def roll_table(table_type: TableType, constrains: str | None, settings: dict):
     # inline roll mechanic
     quick_roll_rolls = re.findall(r"\§(.*)\§", result)
     for quick in quick_roll_rolls:
+        quick = re.sub(" ", "", quick)
         dice = re.match(r"(\d*)d(\d*)", quick)
         roll = ""
         if dice != None: # dice roll
@@ -145,7 +146,7 @@ def roll_table(table_type: TableType, constrains: str | None, settings: dict):
     sub_rolls = re.findall(r"\$([^\$]*)\$", result)
 
     for roll in sub_rolls:
-        
+        roll = re.sub(" ", "", roll)
         constrains = re.match(r"(?:(?P<mult>\d*)\|)?(?P<t>[^\|]*)(?:\|(?P<con>.*))?", roll)
 
         c = constrains.groupdict() # How often roll
